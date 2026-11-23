@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Little Big Adventure",
+    "id": "SLES-00698",
+    "boot_exe": "SLES_006.98"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Little Big Adventure (Europe) (En,Fr,De,Es,It).cue",
+    "bin_name": "Little Big Adventure (Europe) (En,Fr,De,Es,It) (Track 1).bin",
+    "track_counts": [
+      27
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 284112192,
+      "md5": "8a6856f5171341f1ab73abe4e3666e73",
+      "sha1": "745ccef17244eb588bb6627c12559485f8076939",
+      "crc32": "60763f44"
+    },
+    "disc_fp": "db2cd2e0b4cd589dd686932686d5c4fb227ff3d37e6dac2c43780789c09a3170"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x8002A668",
+    "text_size": "0x0008E800",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 794,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

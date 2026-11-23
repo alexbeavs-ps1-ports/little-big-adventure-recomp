@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Little Big Adventure"
+id = "SLES-00698"
+players = 1
+exe = "disc/SLES_006.98"
+disc = "disc/Little Big Adventure (Europe) (En,Fr,De,Es,It).cue"
+discs = ["disc/Little Big Adventure (Europe) (En,Fr,De,Es,It).cue"]
+disc_serials = ["SLES-00698"]
+load_address = "0x80010000"
+entry_pc = "0x8002A668"
+text_size = "0x0008E800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Little Big Adventure (Europe) (En,Fr,De,Es,It) (Track 1).bin"
+cue_name = "Little Big Adventure (Europe) (En,Fr,De,Es,It).cue"
+boot_exe = "SLES_006.98"
+known_sizes = [284112192]
+known_md5 = [
+  "8a6856f5171341f1ab73abe4e3666e73",
+]
+known_sha1 = [
+  "745ccef17244eb588bb6627c12559485f8076939",
+]
+known_crc32 = [
+  "60763f44",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Little Big Adventure Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 27
+required_disc_fp = "db2cd2e0b4cd589dd686932686d5c4fb227ff3d37e6dac2c43780789c09a3170"
